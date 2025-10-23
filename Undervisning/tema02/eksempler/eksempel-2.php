@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Eksempel 2</title>
-</head>
-<body>
-  <h3>Eksempel 2</h3>
-    
-  <form method="post" action="" id="eksempel2" name="eksempel2">
-    Hva er 3 ganger 3 ? <input type="text" id="svar" name="svar" required  /> <br />
-    <input type="submit" value="Fortsett" id="fortsett" name="fortsett" />
-    <input type="reset" value="Nullstill" name="nullstill" id="nullstill" /> <br />
-  </form>
-</body>
-</html>
-
 <?php     /* Eksempel 2 */
 /*
-/*    Programmet mottar fra et HTML-skjema et svar på spørsmålet "Hva er 3 ganger 3 ?"
+/*    Programmet mottar fra et HTML-skjema et svar pï¿½ spï¿½rsmï¿½let "Hva er 3 ganger 3 ?"
 /*    Programmet sjekker om svaret er riktig og skriver ut en melding ang. svaret 
-/*    Meldingen skrives ut på samme side som HTML-skjemaet er
+/*    Meldingen skrives ut pï¿½ samme side som HTML-skjemaet er
 */
   if (isset($_POST ["fortsett"])) 
     {
