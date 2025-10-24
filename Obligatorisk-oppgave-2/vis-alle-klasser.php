@@ -18,10 +18,11 @@
   for ($r=1;$r<=$antallRader;$r++)
     {
       $rad=mysqli_fetch_array($sqlResultat);  /* ny rad hentet fra spørringsresultatet */
-      $klassekode=$rad["klassekode"];        /* ELLER $postnr=$rad[0]; */
-      $klasssenavn=$rad["klasssenavn"];    /* ELLER $poststed=$rad[1]; */
+      $klassekode=$rad["klassekode"];
+      $klasssenavn=$rad["klasssenavn"];
+      $studiumkode=$rad["studiumkode"];
 
-      print ("<tr> <td> $klassekode </td> <td> $klasssenavn </td> </tr>");
+      print ("<tr> <td> $klassekode </td> <td> $klasssenavn </td> <td> $studiumkode </td>  </tr>" );
     }
   print ("</table>"); 
 ?>
