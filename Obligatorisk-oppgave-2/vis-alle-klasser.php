@@ -11,9 +11,9 @@
 	
   $antallRader=mysqli_num_rows($sqlResultat);  /* antall rader i resultatet beregnet */
 
-  print ("<h3>Registrerte klasser</h3>");
+  print ("<h3>Klasser</h3>");
   print ("<table border=1>");  
-  print ("<tr><th align=left>klassekode</th> <th align=left>klassenavn</th></tr>"); 
+  print ("<tr> <th align=left>Klassekode</th> <th align=left>Klassenavn</th> <th align=left>Studiumkode</th> </tr>"); 
 
   for ($r=1;$r<=$antallRader;$r++)
     {
@@ -22,7 +22,11 @@
       $klasssenavn=$rad["klasssenavn"];
       $studiumkode=$rad["studiumkode"];
 
-      print ("<tr> <td> $klassekode </td> <td> $klasssenavn </td> <td> $studiumkode </td>  </tr>" );
+      print ("<tr>
+                <td> $klassekode </td>
+                <td> $klasssenavn </td>
+                <td> $studiumkode </td>
+            </tr>" );
     }
   print ("</table>"); 
 ?>
