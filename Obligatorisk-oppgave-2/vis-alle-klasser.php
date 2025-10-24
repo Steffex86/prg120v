@@ -2,7 +2,7 @@
 /*
 /*  Programmet skriver ut alle registrerte klasser
 */
-  include("Obligatorisk-oppgave-2\db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
+  include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
 
   $sqlSetning="SELECT * FROM klasse;";
   
