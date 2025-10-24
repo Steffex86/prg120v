@@ -25,7 +25,7 @@
       print ("<tr>
                 <td> $klassekode </td>
                 <td> $klasssenavn </td>
-                <td> $studiumkode </td>
+                <td align=center> $studiumkode </td>
             </tr>" );
     }
   print ("</table>"); 
