@@ -13,7 +13,7 @@
 
   print ("<h3>Klasser</h3>");
   print ("<table border=1>");  
-  print ("<tr> <th align=left>Klassekode</th> <th align=center>Klassenavn</th> <th align=center>Studiumkode</th> </tr>"); 
+  print ("<tr> <th align=center>Klassekode</th> <th align=center>Klassenavn</th> <th align=center>Studiumkode</th> </tr>"); 
 
   for ($r=1;$r<=$antallRader;$r++)
     {
@@ -23,8 +23,8 @@
       $studiumkode=$rad["studiumkode"];
 
       print ("<tr>
-                <td> $klassekode </td>
-                <td> $klasssenavn </td>
+                <td align=center> $klassekode </td>
+                <td align=center> $klasssenavn </td>
                 <td align=center> $studiumkode </td>
             </tr>" );
     }
