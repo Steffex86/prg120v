@@ -25,3 +25,5 @@
     }
   print ("</table>"); 
 ?>
+
+Undervisning\tema05\eksempler\db-tilkobling.php
