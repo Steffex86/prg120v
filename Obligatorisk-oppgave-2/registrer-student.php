@@ -1,17 +1,17 @@
-<?php  /* registrer-poststed */
+<?php  /* registrer-student */
 /*
-/*  Programmet lager et html-skjema for å registrere et poststed
-/*  Programmet registrerer data (klasse) i databasen
+/*  Programmet lager et html-skjema for å registrere en student
+/*  Programmet registrerer data (student) i databasen
 */
 ?> 
 
-<h3>Registrer klasse </h3>
+<h3>Registrer student </h3>
 
-<form method="post" action="" id="registrerKlasseSkjema" name="registrerKlasseSkjema">
-  Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
-  Klassenavn <input type="text" id="klassenavn" name="klassenavn" required /> <br/>
-  Studiumkode <input type="text" id="studiumkode" name="studiumkode" required /> <br/>
-  <input type="submit" value="Registrer klasse" id="registrerKlasseKnapp" name="registrerKlasseKnapp" /> 
+<form method="post" action="" id="registrerStudentSkjema" name="registrerStudentSkjema">
+  Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
+  Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
+  Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
+  <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
 
