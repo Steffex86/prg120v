@@ -25,8 +25,8 @@
 
       print ("<tr>
                 <td align=center> $brukernavn </td>
-                <td align=center> $fornavn </td>
-                <td align=center> $etternavn </td>
+                <td align=left> $fornavn </td>
+                <td align=left> $etternavn </td>
                 <td align=center> $klassekode </td>
             </tr>" );
     }
