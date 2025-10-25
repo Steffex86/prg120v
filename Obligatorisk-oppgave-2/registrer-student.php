@@ -31,10 +31,11 @@
       $brukernavn=$_POST ["brukernavn"];
       $fornavn=$_POST ["fornavn"];
       $etternavn=$_POST ["etternavn"];
+      $klassekode=$_POST ["klassekode"];
 
-      if (!$brukernavn || !$fornavn || !$etternavn)
+      if (!$brukernavn || !$fornavn || !$etternavn || !$klassekode)
         {
-          print ("brukernavn, fornavn og etternavn m&aring; fylles ut");
+          print ("brukernavn, fornavn, etternavn og klassekode m&aring; fylles ut");
         }
       else
         {
