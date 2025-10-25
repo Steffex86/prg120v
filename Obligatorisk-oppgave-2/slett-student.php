@@ -13,30 +13,30 @@
   Student 
   <select name="student" id="student">
     <option value="">Velg student</option>
-    <?php include("dynamiske-funksjoner.php"); listeboksKlasse(); ?>
+    <?php include("dynamiske-funksjoner.php"); listeboksStudent(); ?>
   </select>  <br/>
-  <input type="submit" value="Slett klasse" name="slettKlasseKnapp" id="slettKlasseKnapp" /> 
+  <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" /> 
 </form>
 
 <?php
-  if (isset($_POST ["slettKlasseKnapp"]))
+  if (isset($_POST ["slettStudentKnapp"]))
     {
-      $klassekode=$_POST ["klasse"];	  
+      $brukernavn=$_POST ["student"];	  
 	  
-      if (!$klassekode)
+      if (!$brukernavn)
         {
-          print ("Det er ikke valgt noe klasse"); 
+          print ("Det er ikke valgt noe student"); 
 
         }
       else
         {	  		 
           include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
 	
-          $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
+          $sqlSetning="DELETE FROM student WHERE brukernavn='$brukernavn';";
           mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
             /* SQL-setning sendt til database-serveren */
 		
-          print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode  <br />");
+          print ("F&oslash;lgende student er n&aring; slettet: $brukernavn  <br />");
         }	
     }
 ?>
