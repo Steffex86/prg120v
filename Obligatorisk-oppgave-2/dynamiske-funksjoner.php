@@ -41,7 +41,7 @@ function listeboksStudent()
       $rad=mysqli_fetch_array($sqlResultat);  /* ny rad hentet fra spørringsresultatet */
       $brukernavn=$rad["brukernavn"]; 
       $fornavn=$rad["fornavn"];
-      $etterrnavn=$rad["etterrnavn"];
+      $etternavn=$rad["etternavn"];
       $klassekode=$rad["klassekode"];
 
       print("<option value='$brukernavn'>$brukernavn $fornavn $etterrnavn $klassekode</option>");  /* ny verdi i listeboksen laget */
