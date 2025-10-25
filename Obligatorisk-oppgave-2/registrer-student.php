@@ -1,9 +1,9 @@
-<?php  /* registrer-klasse */
+<?php  /* registrer-poststed */
 /*
-/*  Programmet lager et html-skjema for å registrere en klasse
+/*  Programmet lager et html-skjema for å registrere et poststed
 /*  Programmet registrerer data (klasse) i databasen
 */
-?>
+?> 
 
 <h3>Registrer klasse </h3>
 
