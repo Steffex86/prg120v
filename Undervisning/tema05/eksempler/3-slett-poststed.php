@@ -15,7 +15,7 @@
 </form>
 
 <?php
-  if (isset($_POST ["slettPoststedKnapp"]))
+    if (isset($_POST ["slettPoststedKnapp"]))
     {	
       $postnr=$_POST ["postnr"];
 	  
