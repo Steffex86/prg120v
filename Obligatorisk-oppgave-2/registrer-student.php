@@ -13,13 +13,10 @@
   Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
   Klassekode <select name="klassekode" id="klassekode" required >
     <option value="">Velg klassekode</option>
-    <option value="mandag">mandag</option>
-    <option value="tirsdag">tirsdag</option>
-    <option value="onsdag">onsdag</option>
-    <option value="torsdag">torsdag</option>
-    <option value="fredag">fredag</option>
+    <option value="IT1">IT1</option>
+    <option value="IT2">IT2</option>
+    <option value="IT3">IT3</option>
   </select>  <br />
-
 
   <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
@@ -51,11 +48,11 @@
                         }
           else
             {
-              $sqlSetning="INSERT INTO student VALUES('$brukernavn','$fornavn','$etternavn');";
+              $sqlSetning="INSERT INTO student VALUES('$brukernavn','$fornavn','$etternavn','$klassekode');";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
                 /* SQL-setning sendt til database-serveren */
 
-              print ("F&oslash;lgende student er n&aring; registrert: $brukernavn $fornavn $etternavn"); 
+              print ("F&oslash;lgende student er n&aring; registrert: $brukernavn $fornavn $etternavn $klassekode"); 
             }
         }
     }
