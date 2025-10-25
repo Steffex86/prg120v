@@ -34,9 +34,9 @@
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat); 
 
-          if ($antallRader!=0)  /* poststedet er registrert fra før */
+          if ($antallRader!=0)  /* klasse er registrert fra før */
             {
-              print ("Poststedet er registrert fra f&oslash;r");
+              print ("Klasse er registrert fra f&oslash;r");
                         }
           else
             {

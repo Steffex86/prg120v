@@ -16,35 +16,35 @@
 </form>
 
 <?php 
-  if (isset($_POST ["registrerKlasseKnapp"]))
+  if (isset($_POST ["registrerStudentKnapp"]))
     {
-      $klassekode=$_POST ["klassekode"];
-      $klassenavn=$_POST ["klassenavn"];
-      $studiumkode=$_POST ["studiumkode"];
+      $brukernavn=$_POST ["brukernavn"];
+      $fornavn=$_POST ["fornavn"];
+      $etternavn=$_POST ["etternavn"];
 
-      if (!$klassekode || !$klassenavn || !$studiumkode)
+      if (!$brukernavn || !$fornavn || !$etternavn)
         {
-          print ("Klassekode, klassenavn og studiumkode m&aring; fylles ut");
+          print ("brukernavn, fornavn og etternavn m&aring; fylles ut");
         }
       else
         {
           include("db-tilkobling.php");  /* tilkobling til database serveren utført og valg av database foretatt */
 
-          $sqlSetning="SELECT * FROM klasse WHERE klassekode='$klassekode';";
+          $sqlSetning="SELECT * FROM student WHERE brukernavn='$brukernavn';";
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat); 
 
-          if ($antallRader!=0)  /* poststedet er registrert fra før */
+          if ($antallRader!=0)  /* student er registrert fra før */
             {
-              print ("Poststedet er registrert fra f&oslash;r");
+              print ("Student er registrert fra f&oslash;r");
                         }
           else
             {
-              $sqlSetning="INSERT INTO klasse VALUES('$klassekode','$klassenavn','$studiumkode');";
+              $sqlSetning="INSERT INTO student VALUES('$brukernavn','$fornavn','$etternavn');";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
                 /* SQL-setning sendt til database-serveren */
 
-              print ("F&oslash;lgende klasse er n&aring; registrert: $klassekode $klassenavn $studiumkode"); 
+              print ("F&oslash;lgende student er n&aring; registrert: $brukernavn $fornavn $etternavn"); 
             }
         }
     }
