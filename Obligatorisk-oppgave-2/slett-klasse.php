@@ -17,31 +17,31 @@
 <?php
   if (isset($_POST ["slettKlasseKnapp"]))
     {	
-      $postnr=$_POST ["postnr"];
+      $klassekode=$_POST ["klassekode"];
 	  
-	  if (!$postnr)
+	  if (!$klassekode)
         {
-          print ("Postnr m&aring; fylles ut");
+          print ("Klassekode m&aring; fylles ut");
         }
       else
         {
           include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
 
-          $sqlSetning="SELECT * FROM poststed WHERE postnr='$postnr';";
+          $sqlSetning="SELECT * FROM klasse WHERE klassekode='$klassekode';";
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat); 
 
-          if ($antallRader==0)  /* poststedet er ikke registrert */
+          if ($antallRader==0)  /* klasse er ikke registrert */
             {
-              print ("Poststedet finnes ikke");
+              print ("Klasse finnes ikke");
             }
           else
             {	  
-              $sqlSetning="DELETE FROM poststed WHERE postnr='$postnr';";
+              $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
                 /* SQL-setning sendt til database-serveren */
 		
-              print ("F&oslash;lgende poststed er n&aring; slettet: $postnr  <br />");
+              print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode  <br />");
             }
         }
     }
