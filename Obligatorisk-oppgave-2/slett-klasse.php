@@ -12,8 +12,8 @@
 <form method="post" action="" id="slettKlasseSkjema" name="slettKlasseSkjema" onSubmit="return bekreft()">
   Klasse 
   <select name="klasse" id="klasse">
-    <option value="">velg postnr</option>
-    <?php include("dynamiske-funksjoner.php"); listeboksKlasse(); ?> 
+    <option value="">Velg klasse</option>
+    <?php include("dynamiske-funksjoner.php"); listeboksKlasse(); ?>
   </select>  <br/>
   <input type="submit" value="Slett klasse" name="slettKlasseKnapp" id="slettKlasseKnapp" /> 
 </form>
@@ -21,7 +21,7 @@
 <?php
   if (isset($_POST ["slettKlasseKnapp"]))
     {
-      $klassekode=$_POST ["klassekode"];	  
+      $klassekode=$_POST ["klasse"];	  
 	  
       if (!$klassekode)
         {
