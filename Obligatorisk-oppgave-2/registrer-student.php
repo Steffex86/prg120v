@@ -11,6 +11,16 @@
   Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
   Fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
   Etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
+  Klassekode <select name="klassekode" id="klassekode" required >
+    <option value="">Velg klassekode</option>
+    <option value="mandag">mandag</option>
+    <option value="tirsdag">tirsdag</option>
+    <option value="onsdag">onsdag</option>
+    <option value="torsdag">torsdag</option>
+    <option value="fredag">fredag</option>
+  </select>  <br />
+
+
   <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
