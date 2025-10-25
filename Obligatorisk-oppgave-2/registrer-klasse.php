@@ -16,34 +16,35 @@
 </form>
 
 <?php 
-  if (isset($_POST ["registrerPoststedKnapp"]))
+  if (isset($_POST ["registrerKlasseKnapp"]))
     {
-      $postnr=$_POST ["postnr"];
-      $poststed=$_POST ["poststed"];
+      $klassekode=$_POST ["klassekode"];
+      $klassenavn=$_POST ["klassenavn"];
+      $studiumkode=$_POST ["studiumkode"];
 
-      if (!$postnr || !$poststed)
+      if (!$klassekode || !$klassenavn || !$studiumkode)
         {
-          print ("B&aring;de postnr og poststed m&aring; fylles ut");
+          print ("Klassekode, klassenavn og studiumkode m&aring; fylles ut");
         }
       else
         {
           include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
 
-          $sqlSetning="SELECT * FROM poststed WHERE postnr='$postnr';";
+          $sqlSetning="SELECT * FROM klasse WHERE klassekode='$klassekode';";
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat); 
 
           if ($antallRader!=0)  /* poststedet er registrert fra før */
             {
-              print ("Poststedet er registrert fra f&oslashr");
-            }
+              print ("Poststedet er registrert fra f&oslash;r");
+                        }
           else
             {
-              $sqlSetning="INSERT INTO poststed VALUES('$postnr','$poststed');";
+              $sqlSetning="INSERT INTO klasse VALUES('$klassekode','$klassenavn','$studiumkode');";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
                 /* SQL-setning sendt til database-serveren */
 
-              print ("F&oslash;lgende poststed er n&aring; registrert: $postnr $poststed"); 
+              print ("F&oslash;lgende klasse er n&aring; registrert: $klassekode $klassenavn $studiumkode"); 
             }
         }
     }
