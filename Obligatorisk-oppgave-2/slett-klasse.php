@@ -45,6 +45,10 @@
             /* SQL-setning sendt til database-serveren */
 		
           print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode $klasssenavn $studiumkode <br />");
-        }	
+        }
+        else
+        {
+        echo "Feil ved sletting:" . mysqli_error($db);
+        }
     }
 ?>
