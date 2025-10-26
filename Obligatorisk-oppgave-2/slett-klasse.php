@@ -25,8 +25,7 @@
 	  
       if (!$klassekode)
         {
-          print ("Det er ikke valgt noe klasse"); 
-
+          print ("Det er ikke valgt noe klasse");
         }
       else
         {	  		 
@@ -34,9 +33,9 @@
         $sqlSetning = "SELECT klasssenavn, studiumkode FROM klasse WHERE klassekode='$klassekode'";
         $resultat = mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           /* SQL-setning sendt til database-serveren */
-        }   
+           
         if ($rad = mysqli_fetch_array($resultat))
-        {
+        
             $klasssenavn = $rad["klasssenavn"];
             $studiumkode = $rad["studiumkode"];
 
@@ -45,10 +44,6 @@
             /* SQL-setning sendt til database-serveren */
 		
           print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode $klasssenavn $studiumkode <br />");
-        }
-        else
-        {
-        echo "Feil ved sletting:" . mysqli_error($db);
         }
     }
 ?>
