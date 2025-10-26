@@ -30,15 +30,7 @@
       else
         {	  		 
           include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
-	        
-          $sqlSetning = "SELECT fornavn, etternavn, klassekode FROM student WHERE brukernavn='$brukernavn';";
-          $resultat = mysqli_query($db, $sqlSetning);
-          $rad = mysqli_fetch_array($resultat);
-
-          $fornavn = $rad["fornavn"];
-          $etternavn = $rad["etternavn"];
-          $klassekode = $rad["klassekode"];
-
+	
           $sqlSetning="DELETE FROM student WHERE brukernavn='$brukernavn';";
           mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
             /* SQL-setning sendt til database-serveren */
