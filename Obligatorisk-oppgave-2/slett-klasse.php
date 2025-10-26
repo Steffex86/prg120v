@@ -35,7 +35,6 @@
           /* SQL-setning sendt til database-serveren */
            
         if ($rad = mysqli_fetch_array($resultat))
-        
             $klasssenavn = $rad["klasssenavn"];
             $studiumkode = $rad["studiumkode"];
 
