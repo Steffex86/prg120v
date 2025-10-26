@@ -37,7 +37,7 @@
         }   
         if ($rad = mysqli_fetch_array($resultat))
         {
-            $klassenavn = $rad["klasssenavn"];
+            $klasssenavn = $rad["klasssenavn"];
             $studiumkode = $rad["studiumkode"];
 
           $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
