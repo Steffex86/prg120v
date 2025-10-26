@@ -31,14 +31,7 @@
       else
         {	  		 
           include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
-        $sqlHent = "SELECT klassenavn, studiumkode FROM klasse WHERE klassekode='$klassekode'";
-        $resultat = mysqli_query($db, $sqlHent);
-        }   
-        if ($rad = mysqli_fetch_array($resultat))
-        {
-            $klassenavn = $rad["klassenavn"];
-            $studiumkode = $rad["studiumkode"];
-
+	
           $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
           mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
             /* SQL-setning sendt til database-serveren */
