@@ -30,12 +30,24 @@
       else
         {	  		 
           include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
-	
+        $sqlSetning = "SELECT klasssenavn, studiumkode FROM klasse WHERE klassekode='$klassekode'";
+        $resultat = mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
+          /* SQL-setning sendt til database-serveren */
+           
+        if ($rad = mysqli_fetch_array($resultat))
+            $klasssenavn = $rad["klasssenavn"];
+            $studiumkode = $rad["studiumkode"];
+        try
+        {
           $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
-          mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
-            /* SQL-setning sendt til database-serveren */
-		
-          print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode $klassenavn $studiumkode <br />");
-        }	
+          mysqli_query($db,$sqlSetning);
+          print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode $klasssenavn $studiumkode <br />");
+        }  
+         catch (mysqli_sql_exception $e)
+        {
+          print("Feil ved sletting av klasse: <br/>
+          " . $e->getMessage());
+        }
+        }
     }
 ?>
