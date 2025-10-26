@@ -31,8 +31,9 @@
       else
         {	  		 
           include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
-        $sqlHent = "SELECT klassenavn, studiumkode FROM klasse WHERE klassekode='$klassekode'";
-        $resultat = mysqli_query($db, $sqlHent);
+        $sqlSetning = "SELECT klassenavn, studiumkode FROM klasse WHERE klassekode='$klassekode'";
+        $resultat = mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
+          /* SQL-setning sendt til database-serveren */
         }   
         if ($rad = mysqli_fetch_array($resultat))
         {
