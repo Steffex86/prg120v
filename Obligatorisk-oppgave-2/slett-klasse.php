@@ -31,20 +31,20 @@
       else
         {	  		 
           include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
-        $sqlSetning = "SELECT klassenavn, studiumkode FROM klasse WHERE klassekode='$klassekode'";
+        $sqlSetning = "SELECT klasssenavn, studiumkode FROM klasse WHERE klassekode='$klassekode'";
         $resultat = mysqli_query($db, $sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           /* SQL-setning sendt til database-serveren */
         }   
         if ($rad = mysqli_fetch_array($resultat))
         {
-            $klassenavn = $rad["klassenavn"];
+            $klassenavn = $rad["klasssenavn"];
             $studiumkode = $rad["studiumkode"];
 
           $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
           mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
             /* SQL-setning sendt til database-serveren */
 		
-          print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode $klassenavn $studiumkode <br />");
+          print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode $klasssenavn $studiumkode <br />");
         }	
     }
 ?>
